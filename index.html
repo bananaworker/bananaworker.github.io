@@ -53,6 +53,13 @@ layout: default
   </div>
 
   <div class="home-section">
+    <h4>Most recent post</h4>
+    {% for post in site.posts limit: 1%}
+      {% include post-excerpt.html %}
+    {% endfor %}
+  </div>
+
+  <div class="home-section">
     <h2>THE FOUNDERS</h2>
     <p>
       Learn Enough to Be Dangerous was founded in 2015 by Michael Hartl, Lee
@@ -117,5 +124,5 @@ layout: default
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </div>
