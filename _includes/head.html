@@ -1,7 +1,37 @@
 <head>
-  <title>Test Page: Don't Panic</title>
+  {% if page.title %}
+    <title>{{ page.title }} | Test Page</title>
+  {% else %}
+    <title>Test Page: Don't Panic</title>
+  {% endif %}
+
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}" >
+  {% else %}
+    <meta name="description" content="This is a dangerous site" >
+  {% endif %}
+
+<!-- OG TAGS -->
+  {% if page.og:title %}
+    <meta property="og:title" content="{{ page.og:title }} | Test page" />
+  {% else %}
+    <meta property="og:title" content="Test Page: Don't Panic" />
+  {% endif %}
+
+  {% if page.og:description %}
+    <meta property="og:description" content="{{ page.og:description }} " />
+  {% else %}
+    <meta property="og:description" content="This is a dangerous site" />
+  {% endif %}
+
+<!-- END OF OG TAGS -->
+
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/css/reset.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/fonts/fontawesome-free-5.11.2-web/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway:100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
